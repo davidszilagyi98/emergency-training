@@ -14,6 +14,7 @@ public class SamplePlayerController : MonoBehaviour
     CameraShaker cameraShaker;
     ScreenFlasher screenFlasher;
     Timer timer;
+    AnyDoorOpener doorOpener;
 
 
 
@@ -24,6 +25,8 @@ public class SamplePlayerController : MonoBehaviour
         screenFlasher = FindObjectOfType<ScreenFlasher>();
 
         timer = FindObjectOfType<Timer>();
+
+        doorOpener = FindObjectOfType<AnyDoorOpener>();
     }
 
 
@@ -44,6 +47,12 @@ public class SamplePlayerController : MonoBehaviour
         {
             cameraShaker.ShakeCameraForOneSecond();
         }
+
+        if (collision.gameObject.CompareTag("Open")) // check if the player collides with the AnyDoorOpener assigned spots
+        {
+            doorOpener.OpenDoor();
+        }
+
     }
 
 

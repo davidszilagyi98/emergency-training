@@ -6,27 +6,40 @@ public class AnyDoorOpener : MonoBehaviour
 {
     public GameObject affectedGameObject;
     private bool playerInside = false;
+    public float doorOpenTime = 1.0f;
 
     public KeyCode interactKey = KeyCode.E;
 
+
+    public IEnumerator OpenDoor()
+    {
+        Vector3 eulerAngles = affectedGameObject.transform.rotation.eulerAngles;
+        float x = eulerAngles.x;
+        float y = eulerAngles.y;
+        float z = eulerAngles.z;
+
+        float initialY = y;
+        float finalY = initialY + 90.0f;
+
+        float startTime = Time.time;
+
+        while (Time.time < startTime + doorOpenTime)
+        {
+            float t = (Time.time - startTime) / doorOpenTime;
+            y = Mathf.Lerp(initialY, finalY, t);
+
+            affectedGameObject.transform.rotation = Quaternion.Euler(x, y, z);
+            yield return null;
+        }
+
+        affectedGameObject.transform.rotation = Quaternion.Euler(x, finalY, z);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(interactKey) && playerInside == true)
         {
-            // Do the animation
-            Vector3 eulerAngles = affectedGameObject.transform.rotation.eulerAngles;
-            float x = eulerAngles.x;
-            float y = eulerAngles.y;
-            float z = eulerAngles.z;
-
-
-
-            y += 90f; // make it a couroutine
-
-
-
-            affectedGameObject.transform.rotation = Quaternion.Euler(x, y, z);
+            StartCoroutine(OpenDoor());
         }
     }
 
