@@ -14639,7 +14639,7 @@ ParticleSystem:
   m_GameObject: {fileID: 649743325}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -19345,7 +19345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649743325}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -60.793, y: 8.648, z: -16.646}
+  m_LocalPosition: {x: -60.793, y: 8.633, z: -16.646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47884,12 +47884,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3568dd94e774016b542112996ea43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterParticles: {fileID: 0}
+  WaterParticles: {fileID: 649743327}
   ParticleEmissionRate: 10
   ParticleEmissionAngle: 10
   ParticleEmissionSpeed: 1
   MaxRotationSpeed: 10
   RotationAcceleration: 1
+--- !u!114 &1787301795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787301792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b60b30b722484bb0f8357acf1e66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotation: {x: 0, y: 1000, z: 0}
 --- !u!1001 &1788699271
 PrefabInstance:
   m_ObjectHideFlags: 0
