@@ -99,4 +99,11 @@ public class AnyDoorOpener : MonoBehaviour
              playerInside = false;
          }
      }*/
+    /*{
+        if (other.gameObject == affectedGameObject)
+    {
+        affectedGameObject = null;
+        playerInside = false;
+    }
+    }*/
 }
