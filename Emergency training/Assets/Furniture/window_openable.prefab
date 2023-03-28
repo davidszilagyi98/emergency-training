@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 2182407948481688576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: 3.25, z: -13.09}
-  m_LocalScale: {x: 4.75059, y: 4.876875, z: 1}
+  m_LocalScale: {x: 2.5742497, y: 4.876875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3477410159301500324}
@@ -141,7 +141,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2182407948481688576}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -159,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedGameObject: {fileID: 2752035770352260379}
+  doorOpenTime: 1
+  doorOpen: 0
   interactKey: 101
 --- !u!1 &2752035770352260379
 GameObject:
@@ -300,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 4254193767964231454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.1266375, y: 0.90437317, z: -15.413983}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3454204127195435252}

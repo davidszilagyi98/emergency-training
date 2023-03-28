@@ -76,9 +76,11 @@ public class AnyDoorOpener : MonoBehaviour
     }
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
-
+    
     {
-        playerInside = true;
+        if (other.gameObject.CompareTag("Player"))
+            { playerInside = true; }
+        
     }
     /*{
         if (other.gameObject.CompareTag("Door") || other.gameObject.CompareTag("Window"))
@@ -91,7 +93,9 @@ public class AnyDoorOpener : MonoBehaviour
     void OnTriggerExit(Collider other)
 
     {
-        playerInside = false;
+        if (other.gameObject.CompareTag("Player"))
+        { playerInside = false; }
+
     }
     /* {
          if (other.gameObject.CompareTag("Door") || other.gameObject.CompareTag("Window"))
