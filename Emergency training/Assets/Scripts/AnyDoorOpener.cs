@@ -106,4 +106,5 @@ public class AnyDoorOpener : MonoBehaviour
         playerInside = false;
     }
     }*/
+
 }
