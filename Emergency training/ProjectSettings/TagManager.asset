@@ -7,6 +7,8 @@ TagManager:
   - waterspinklersystem
   - Window
   - Door
+  - Fire
+  - Floor
   layers:
   - Default
   - TransparentFX
