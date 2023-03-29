@@ -119,7 +119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8046544570607671610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 6112264356014020169}
   - component: {fileID: 6112264356014020168}
   - component: {fileID: 6112264356014020183}
+  - component: {fileID: 3017843288420259617}
   - component: {fileID: 1958805138772386222}
   m_Layer: 0
   m_Name: Player
@@ -491,6 +492,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &3017843288420259617
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112264356014020181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1958805138772386222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,10 +518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b2866da06e25d4eab43fd773901a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterPos: {x: 0, y: 0, z: 0}
+  exitPos: {x: 0, y: 0, z: 0}
   health: 100
   Player: {fileID: 6112264356014020181}
   healthText: {fileID: 8261924437014060795}
-  DeadMessage: {fileID: 0}
+  DeadMessage: {fileID: 3454929371154598289}
 --- !u!1 &7502595779215960614
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +536,7 @@ GameObject:
   - component: {fileID: 1255014248702574302}
   - component: {fileID: 8261924437014060795}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
