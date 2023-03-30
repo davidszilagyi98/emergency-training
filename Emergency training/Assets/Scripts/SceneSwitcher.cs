@@ -17,4 +17,16 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void RestartTryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
+    public void RestartChooseLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+    }
+    public void RestartMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -3);
+    }
 }
