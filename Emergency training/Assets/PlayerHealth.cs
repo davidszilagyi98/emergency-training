@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject Player;
     public Text healthText;
     public GameObject DeadMessage;
+    public GameObject DeadImage;
     private bool DeadMsg;
     // Start is called before the first frame update
     void Start()
@@ -28,12 +31,14 @@ public class PlayerHealth : MonoBehaviour
 
         if (DeadMsg == true && Input.GetKey(KeyCode.Space))
         {
-            DeadMessage.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
         }
         if (health <= 0f)
         {
             DeadMessage.SetActive(true);
+            DeadImage.SetActive(true);
+            DeadMsg = true;
             health = 100f;
         }
 
