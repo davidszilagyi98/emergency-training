@@ -10,7 +10,7 @@ public class StepCompletion : MonoBehaviour
     private void Start()
     {
         // Get the GameManager instance from the scene
-        gameManager = FindObjectOfType<GameManager>();
+        //gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -16,6 +16,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject DeadMessage;
     public GameObject DeadImage;
     private bool DeadMsg;
+    public AudioSource audioData;
+    public AudioSource Breathing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,37 +44,55 @@ public class PlayerHealth : MonoBehaviour
             DeadMsg = true;
             health = 100f;
         }
+        if (health < 30f)
+        {
+            Breathing = GetComponent<AudioSource>();
+            Breathing.Play(0);
+        }
 
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag.Equals("Fire"))
         {
-            health = health - 10f * Time.deltaTime;
+            health = health - 5f * Time.deltaTime;
             Debug.Log("You are on fire!");
-
         }
+        
+       
     }
     private void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Floor")
+
+     
+        if (col.tag.Equals("Fire"))
+        {
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
+        }
+        if (col.tag == "Floor")
         {
             print("enter");
             enterPos = transform.position;
-            if(exitPos.y - enterPos.y > 2)
+            if (exitPos.y - enterPos.y > 2)
             {
                 print("falling dmg");
                 health = health - 2 * exitPos.y - enterPos.y;
             }
         }
-    }
-    private void OnTriggerExit(Collider col)
+        }
+    private void OnTriggerExit(Collider other)
     {
-        if(col.tag == "Floor")
+        if(other.tag == "Floor")
         {
             print("exit");
 
             exitPos = transform.position;
+        }
+        if (other.tag.Equals("Fire"))
+        {
+            audioData = GetComponent<AudioSource>();
+            audioData.Stop();
         }
     }
 }
