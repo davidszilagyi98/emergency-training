@@ -13,8 +13,8 @@ public class MatejsGameManagerTest : MonoBehaviour
 
 
 
-
-    public class Step
+    [CreateAssetMenu]
+    public class Step : ScriptableObject
     {
         public int stepNumber;
         public string title;
@@ -37,7 +37,6 @@ public class MatejsGameManagerTest : MonoBehaviour
     {
         public List<Step> steps;
         public int currentStep;
-     
 
         public GameManager()
         {
@@ -52,7 +51,7 @@ public class MatejsGameManagerTest : MonoBehaviour
             steps.Add(new Step(5, "Emergency Escape Route", "Learn and practice an emergency escape route", "Brilliant work! You're now prepared with a clear plan for emergency evacuation.", "Make sure to practice your emergency escape route with family and colleagues to ensure everyone knows what to do in case of emergency."));
 
             // Set the current step for the beggining of the game
-            currentStep = 1;
+            currentStep = 0;
         }
 
         public void Start()
@@ -77,7 +76,6 @@ public class MatejsGameManagerTest : MonoBehaviour
             // Increment the current step and save it to PlayerPrefs
             currentStep++;
             PlayerPrefs.SetInt("CurrentStep", currentStep);
-            PlayerPrefs.Save();
 
             // If we've completed all steps, reset the game
             if (currentStep >= steps.Count)
