@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24c5f0afed15c4438d3c1eded929acd, type: 3}
+  m_Name: Step2
+  m_EditorClassIdentifier: 
+  title: Call emergency
+  description: The next step would be to call the emergency. Find a phone on your
+    desk in a classroom on the first floor and call the firefighters (112).
+  positiveFeedback: Superb, the firefighters are now on the way!
+  negativeFeedback: The emergency needs to be called to put down the fire!
+  isDone: 0

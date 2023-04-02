@@ -5,7 +5,7 @@ using UnityEngine;
 public class Singleton : MonoBehaviour
 {
 
-    public Question[] questions;
+    public EscapeStep[] steps;
 
     //creating a singleton
     public int score;
@@ -24,11 +24,32 @@ public class Singleton : MonoBehaviour
         }
     }
 
-   
-    public Question GetQuestions(int index)
+    public void SetAnswerCorrect(int index)
     {
-        index = Mathf.Clamp(index,0, questions.Length - 1);
-        return questions[index];
+        steps[index].isDone = true;
+    }
+
+    public bool ValidateQuestionAnswer(int index, bool isDone)
+    {
+        EscapeStep step = steps[index];
+        if (step.isDone == false || true )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /*public void completeCurrentStep()
+    {
+
+    }*/
+
+    public EscapeStep GetSteps(int index)
+    {
+        index = Mathf.Clamp(index,0, steps.Length - 1);
+        return steps[index];
     }
 
 }
