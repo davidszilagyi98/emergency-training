@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c5f0afed15c4438d3c1eded929acd, type: 3}
   m_Name: Step1
   m_EditorClassIdentifier: 
-  title: Fire Alarm
-  description: Find a fire alarm on floor X and press it.
+  title: Activate the fire alarm
+  description: Find a fire alarm (found at all exits and fire hose cupboards) and
+    press it.
   positiveFeedback: Perfect, the alarm went off!
   negativeFeedback: Whoops, you need to set the fire alarm first!
   isDone: 0
