@@ -7,7 +7,7 @@ public class StepTrigger : MonoBehaviour
 {
 
     public bool isTriggered = false;
-
+    public string zoneName;
 
     private void OnTriggerEnter(Collider other)
     {
