@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    public bool IsAround;
+    public GameObject playerTrigger;
     private GameObject wayPoint;
     private Vector3 wayPointPos;
     //This will be the zombie's speed. Adjust as necessary.
@@ -17,8 +19,27 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
-        //Here, the zombie's will follow the waypoint.
-        transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
+        if (IsAround == false)
+        {
+            wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
+            //Here, the zombie's will follow the waypoint.
+            transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
+            //this.gameObject.transform.LookAt(wayPointPos);
+        }
+        this.gameObject.transform.LookAt(wayPointPos);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag.Equals("Player"))
+        {
+            IsAround = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            IsAround = false;
+        }
     }
 }
