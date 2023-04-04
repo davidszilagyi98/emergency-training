@@ -25,7 +25,9 @@ public class TurnBack : MonoBehaviour {
 	public GUISkin customSkin;
 
 
-
+void awake () {
+GuiOn = false;
+}
 	// if this script is on an object with a collider display the Gui
 	void OnTriggerEnter() 
 	{
