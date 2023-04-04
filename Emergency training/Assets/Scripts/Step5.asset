@@ -18,4 +18,4 @@ MonoBehaviour:
   positiveFeedback: You have succesfully escaped following the fire emergency procedure!
   negativeFeedback: There is one last thing... You need to meet at an assembly point
     (OK gas station)
-  isDone: 0
+  isDone: 1

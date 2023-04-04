@@ -17,4 +17,4 @@ MonoBehaviour:
     desk in a classroom on the first floor and call the firefighters (112).
   positiveFeedback: Superb, the firefighters are now on the way!
   negativeFeedback: The emergency needs to be called to put down the fire!
-  isDone: 0
+  isDone: 1
