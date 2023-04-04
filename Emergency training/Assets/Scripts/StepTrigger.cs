@@ -29,12 +29,16 @@ public class StepTrigger : MonoBehaviour
     {
         if (isTriggered && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("A");
             EscapeStep currentStep = GameManagerMatej.Instance.GetSteps(GameSystemMatej.Instance.currentStepIndex);
+            currentStep.isDone = true; //For fucks sake how did I forget this?? And how did it work without it??
             if (currentStep.isDone)
             {
+                Debug.Log("B");
                 GameSystemMatej.Instance.currentStepIndex++;
                 if (GameSystemMatej.Instance.currentStepIndex >= GameManagerMatej.Instance.steps.Length)
                 {
+                    Debug.Log("C");
                     GameSystemMatej.Instance.currentStepIndex = 0;
                 }
                 GameSystemMatej.Instance.UpdateUI();

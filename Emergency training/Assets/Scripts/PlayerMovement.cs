@@ -81,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
     void UpdatePosition()
     {
         //The wayPoint's position will now be the player's current position.
-        wayPoint.transform.position = transform.position;
+        if(wayPoint != null)
+        {
+            wayPoint.transform.position = transform.position;
+        }
     }
 }
