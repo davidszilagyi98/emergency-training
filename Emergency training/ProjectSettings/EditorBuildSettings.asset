@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene manager'/Choose Level.unity
     guid: 2a589618efa3c8e4ea4955f9f3d018d1
   - enabled: 1
-    path: Assets/Scenes/Dawid's scene.unity
-    guid: 9af9da45e1fa85b46aedae8ef6e56d12
+    path: Assets/Scenes/User Testing.unity
+    guid: 3e63a6b71d90e874ba1399ddf3ebcb09
   - enabled: 1
     path: Assets/Scenes/Scene manager'/Restart screen.unity
     guid: bc5f976fe34ee7b48ae3f8874223fd45
