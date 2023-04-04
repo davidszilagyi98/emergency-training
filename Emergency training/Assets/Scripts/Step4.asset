@@ -18,4 +18,4 @@ MonoBehaviour:
   positiveFeedback: Perfect, you are safe now.
   negativeFeedback: You need to escape to safety as soon as possible! Follow the
     emergency route.
-  isDone: 1
+  isDone: 0

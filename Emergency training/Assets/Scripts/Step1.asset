@@ -17,4 +17,4 @@ MonoBehaviour:
     press it.
   positiveFeedback: Perfect, the alarm went off!
   negativeFeedback: Whoops, you need to set the fire alarm first!
-  isDone: 1
+  isDone: 0

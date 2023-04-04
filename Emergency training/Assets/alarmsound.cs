@@ -16,7 +16,7 @@ public class alarmsound : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             audioSource.PlayOneShot(soundClip);
             particleSystemObject.SetActive(true); // enable particle system

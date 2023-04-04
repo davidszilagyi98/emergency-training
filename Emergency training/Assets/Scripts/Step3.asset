@@ -18,4 +18,4 @@ MonoBehaviour:
   positiveFeedback: Great, the responsible facility staff had been informed.
   negativeFeedback: Whoops, you forgot to inform the facility staff as per the fire
     emergency protocol issued by the BAA.
-  isDone: 1
+  isDone: 0
