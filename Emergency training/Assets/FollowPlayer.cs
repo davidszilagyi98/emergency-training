@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    public bool studentSaved;
     public bool IsAround;
     public GameObject playerTrigger;
     private GameObject wayPoint;
@@ -19,14 +20,18 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        if (IsAround == false)
+        if (studentSaved == true)
         {
-            wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
-            //Here, the zombie's will follow the waypoint.
-            transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
-            //this.gameObject.transform.LookAt(wayPointPos);
+
+            if (IsAround == false)
+            {
+                wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
+                //Here, the zombie's will follow the waypoint.
+                transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
+                //this.gameObject.transform.LookAt(wayPointPos);
+            }
+            this.gameObject.transform.LookAt(wayPointPos);
         }
-        this.gameObject.transform.LookAt(wayPointPos);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,6 +45,13 @@ public class FollowPlayer : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             IsAround = false;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Player") && Input.GetKeyDown(KeyCode.E))
+        {
+            studentSaved = true;
         }
     }
 }

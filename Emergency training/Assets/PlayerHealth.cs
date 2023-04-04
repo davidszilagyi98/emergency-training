@@ -10,6 +10,11 @@ public class PlayerHealth : MonoBehaviour
     public Vector3 enterPos;
     public Vector3 exitPos;
 
+    public float fallDamageThreshold = 10.0f;
+    public float fallDamageMultiplier = 1.0f;
+
+    private Rigidbody playerRigidbody;
+
     public float health = 100f;
     public GameObject Player;
     public Text healthText;
@@ -23,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         healthText = GameObject.Find("HealthText").GetComponent<Text>();
+
+        playerRigidbody = GetComponent<Rigidbody>();
     }
 
 
@@ -30,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
 
-        healthText.text = "Health: " + health.ToString("F0");
+        healthText.text = "HP: " + health.ToString("F0");
 
         if (DeadMsg == true && Input.GetKey(KeyCode.Space))
         {
@@ -50,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
             Breathing.Play(0);
         }
 
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -58,19 +66,31 @@ public class PlayerHealth : MonoBehaviour
             health = health - 5f * Time.deltaTime;
             Debug.Log("You are on fire!");
         }
-        
-       
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       /* if (collision.gameObject)
+        {
+            float impactForce = collision.impulse.magnitude;
+            if (impactForce > fallDamageThreshold)
+            {
+                float fallDamage = (impactForce - fallDamageThreshold) * fallDamageMultiplier;
+                health = health - fallDamage;
+            }
+        }*/
+    }
+
     private void OnTriggerEnter(Collider col)
     {
 
-     
         if (col.tag.Equals("Fire"))
         {
             audioData = GetComponent<AudioSource>();
             audioData.Play(0);
         }
-        if (col.tag == "Floor")
+      /*  if (col.tag == "Floor")
         {
             print("enter");
             enterPos = transform.position;
@@ -79,16 +99,16 @@ public class PlayerHealth : MonoBehaviour
                 print("falling dmg");
                 health = health - 2 * exitPos.y - enterPos.y;
             }
-        }
+        }*/
         }
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Floor")
+        /*if(other.tag == "Floor")
         {
             print("exit");
 
             exitPos = transform.position;
-        }
+        }*/
         if (other.tag.Equals("Fire"))
         {
             audioData = GetComponent<AudioSource>();
