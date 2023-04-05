@@ -20,7 +20,7 @@ public class AnyDoorOpener : MonoBehaviour
         float z = eulerAngles.z;
 
         float initialY = y;
-        float finalY = initialY + 90.0f;
+        float finalY = initialY + -90.0f;
 
         float startTime = Time.time;
 
