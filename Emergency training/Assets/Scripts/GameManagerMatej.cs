@@ -17,6 +17,13 @@ public class GameManagerMatej : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // makes it work across scenes
+
+            // Set the value of isDone boolean for all steps to false
+            for (int i = 0; i < steps.Length; i++)
+            {
+                steps[i].isDone = false;
+            }
+
         }
         else
         {
