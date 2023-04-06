@@ -41,63 +41,24 @@
 //     }
 // }
 
-using UnityEngine;
-
-public class DisappearOnKeyPress : MonoBehaviour
-{
-    public ParticleSystem particles; // assign the particle system in the inspector
-    public ParticleSystem Fire;
-
-    private bool isDisappeared = false; // flag to track if the object has already disappeared
-
-    void Start()
-    {
-        particles.Stop(); // stop the particle system on startup
-        
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && !isDisappeared) // check if E key is pressed and the object hasn't already disappeared
-        {
-            isDisappeared = true; // set the flag to true to prevent multiple disappearances
-
-            if (particles != null) // check if the particle system is assigned
-            {
-                particles.Play(); // play the particle system
-            }
-
-            if (isDisappeared){
-                Fire.Play();
-            }
-
-            gameObject.SetActive(false); // disable the object
-        }
-    }
-}
-
-
 // using UnityEngine;
 
 // public class DisappearOnKeyPress : MonoBehaviour
 // {
 //     public ParticleSystem particles; // assign the particle system in the inspector
-//     public ParticleSystem secondaryParticles; // assign the secondary particle system in the inspector
+//     public ParticleSystem Fire;
 
 //     private bool isDisappeared = false; // flag to track if the object has already disappeared
-//     private bool hasPlayedParticles = false; // flag to track if the first particle system has finished playing
 
-//     void Start()
-//     {
-//         particles.Stop(); // stop the particle system on startup
-//         if (secondaryParticles != null)
-//         {
-//             secondaryParticles.Stop(); // stop the secondary particle system on startup
-//         }
-//     }
+//     // void Start()
+//     // {
+//     //     particles.Stop(); // stop the particle system on startup
+        
+//     // }
 
 //     void Update()
 //     {
+//          particles.Stop();
 //         if (Input.GetKeyDown(KeyCode.E) && !isDisappeared) // check if E key is pressed and the object hasn't already disappeared
 //         {
 //             isDisappeared = true; // set the flag to true to prevent multiple disappearances
@@ -107,21 +68,66 @@ public class DisappearOnKeyPress : MonoBehaviour
 //                 particles.Play(); // play the particle system
 //             }
 
-//             gameObject.SetActive(false); // disable the object
-//         }
-
-//         // check if the first particle system has finished playing and play the secondary particle system
-//         if (isDisappeared && particles != null && !particles.isPlaying && !hasPlayedParticles)
-//         {
-//             hasPlayedParticles = true;
-//             if (secondaryParticles != null)
-//             {
-//                 if (secondaryParticles.transform.parent == null)
-//                 {
-//                     secondaryParticles.transform.parent = transform;
-//                 }
-//                 secondaryParticles.Play();
+//             if (isDisappeared){
+//                 Fire.Play();
 //             }
+
+//             gameObject.SetActive(false); // disable the object
 //         }
 //     }
 // }
+
+using UnityEngine;
+
+public class DisappearOnKeyPress : MonoBehaviour
+{
+    public ParticleSystem particles; // assign the particle system in the inspector
+    public ParticleSystem Fire;
+    public float distanceToActivate = 2f; // the distance at which the player can activate the object
+
+    private bool isDisappeared = false; // flag to track if the object has already disappeared
+    private bool playerInRange = false; // flag to track if the player is in range to activate the object
+
+    private void Update()
+    {
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isDisappeared) // check if E key is pressed and the object hasn't already disappeared and the player is in range
+        {
+            isDisappeared = true; // set the flag to true to prevent multiple disappearances
+
+            if (particles != null) // check if the particle system is assigned
+            {
+                particles.Play(); // play the particle system
+            }
+
+            if (isDisappeared)
+            {
+                Fire.Play();
+            }
+
+            gameObject.SetActive(false); // disable the object
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true; // set the playerInRange flag to true
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false; // set the playerInRange flag to false
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // draw a wireframe sphere around the object to visualize the trigger zone
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, distanceToActivate);
+    }
+}
