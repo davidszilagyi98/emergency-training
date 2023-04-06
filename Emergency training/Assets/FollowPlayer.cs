@@ -7,8 +7,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public bool studentSaved;
     public bool IsAround;
-    public GameObject playerTrigger;
-    private GameObject wayPoint;
+    public GameObject wayPoint;
     private Vector3 wayPointPos;
     //This will be the zombie's speed. Adjust as necessary.
     public float speed = 6.0f;
