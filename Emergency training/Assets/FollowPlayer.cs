@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    public AudioSource help;
     public bool studentSaved;
     public bool IsAround;
     public GameObject wayPoint;
@@ -15,6 +16,8 @@ public class FollowPlayer : MonoBehaviour
     {
         //At the start of the game, the zombies will find the gameobject called wayPoint.
         wayPoint = GameObject.Find("wayPoint");
+        help = GetComponent<AudioSource>();
+        help.Play();
     }
 
     void Update()
@@ -25,9 +28,7 @@ public class FollowPlayer : MonoBehaviour
             if (IsAround == false)
             {
                 wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
-                //Here, the zombie's will follow the waypoint.
                 transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
-                //this.gameObject.transform.LookAt(wayPointPos);
             }
             this.gameObject.transform.LookAt(wayPointPos);
         }
@@ -51,6 +52,7 @@ public class FollowPlayer : MonoBehaviour
         if (other.tag.Equals("Player") && Input.GetKeyDown(KeyCode.E))
         {
             studentSaved = true;
+            help.Stop();
         }
     }
 }
