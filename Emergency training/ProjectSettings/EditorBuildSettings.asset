@@ -12,9 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene manager'/Choose Level.unity
     guid: 2a589618efa3c8e4ea4955f9f3d018d1
   - enabled: 1
+    path: Assets/Scenes/Scene manager'/Tutorial.unity
+    guid: 4e94706d99d28c44c849b195db7937c8
+  - enabled: 1
+    path: Assets/Scenes/Scene manager'/Level 1.unity
+    guid: d01b193056d90794cb2635280a3ab04e
+  - enabled: 1
+    path: Assets/Scenes/Scene manager'/Level 2.unity
+    guid: 82937c4a4c627d342ba12ee6017b62d5
+  - enabled: 0
     path: Assets/Scenes/User Testing.unity
     guid: 3e63a6b71d90e874ba1399ddf3ebcb09
   - enabled: 1
-    path: Assets/Scenes/Scene manager'/Restart screen.unity
+    path: Assets/Scenes/Scene manager'/T - Restart screen 1.unity
+    guid: 1eacd6df2de5761448026f24786aa818
+  - enabled: 1
+    path: Assets/Scenes/Scene manager'/1 - Restart screen.unity
+    guid: 3ac362651fe3f5949a82a1df97aff524
+  - enabled: 1
+    path: Assets/Scenes/Scene manager'/2 - Restart screen.unity
     guid: bc5f976fe34ee7b48ae3f8874223fd45
   m_configObjects: {}

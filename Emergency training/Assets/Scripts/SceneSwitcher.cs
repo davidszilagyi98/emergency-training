@@ -17,16 +17,48 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    public void RestartTryAgain()
+    public void Level1()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
-    public void RestartChooseLevel()
+    public void Level2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
-    public void RestartMainMenu()
+    public void TRestartTryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -3);
+    }
+    public void TRestartChooseLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -4);
+    }
+    public void TRestartMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -5);
+    }
+    public void L1RestartTryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
+    public void L1RestartChooseLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+    }
+    public void L1RestartMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+    }
+    public void L2RestartTryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
+    public void L2RestartChooseLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+    }
+    public void L2RestartMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 7);
     }
 }
