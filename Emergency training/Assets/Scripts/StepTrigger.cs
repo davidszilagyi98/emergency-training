@@ -8,7 +8,7 @@ public class StepTrigger : MonoBehaviour
 
     public bool isTriggered = false;
     public string zoneName;
-    public TextMeshProUGUI feedbackText;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,15 +24,6 @@ public class StepTrigger : MonoBehaviour
         {
             isTriggered = false;
         }
-    }
-
-
-    private IEnumerator DisplayFeedback(string feedbackText)
-    {
-        // Display the feedback text for 5 seconds
-        Debug.Log(feedbackText);
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Feedback cleared");
     }
 
     // old update
@@ -58,7 +49,7 @@ public class StepTrigger : MonoBehaviour
       } */
 
 
-    private void Update()
+   /* private void Update()
     {
         if (isTriggered && Input.GetKeyDown(KeyCode.E))
         {
@@ -79,19 +70,23 @@ public class StepTrigger : MonoBehaviour
                 }
             }
         }
-    }
+    }  */
 
 
 
     // update v3
-    /*
-    private IEnumerator DisplayFeedback(string feedbackText)
+
+
+    /* private IEnumerator DisplayStepFeedback(string feedbackMessage)
 {
-    // Display the feedback text for 5 seconds
-    Debug.Log(feedbackText);
+    feedbackText.text = feedbackMessage; // update the text of the feedbackText component
+    Debug.Log(feedbackMessage); // output the feedback message to the console
     yield return new WaitForSeconds(5f);
+    feedbackText.text = ""; // clear the text of the feedbackText component
     Debug.Log("Feedback cleared");
 }
+*/
+
 
 private void Update()
 {
@@ -105,24 +100,27 @@ private void Update()
             currentStep.isDone = true;
             if (currentStep.isDone)
             {
-                GameSystemMatej.Instance.currentStepIndex++;
+                    FeedbackManager.Instance.ShowPositiveFeedback();
+                    GameSystemMatej.Instance.currentStepIndex++;
                 if (GameSystemMatej.Instance.currentStepIndex >= GameManagerMatej.Instance.steps.Length)
                 {
                     GameSystemMatej.Instance.currentStepIndex = 0;
                 }
                 GameSystemMatej.Instance.UpdateUI();
 
-                // Display the positive feedback message
-                StartCoroutine(DisplayFeedback(currentStep.positiveFeedback));
-            }
+                    // Display the positive feedback message
+                    //   StartCoroutine(FeedbackManager.Instance.DisplayStepFeedback(currentStep.positiveFeedback));
+
+                }
         }
         else
         {
-            // Display the negative feedback message
-            StartCoroutine(DisplayFeedback(currentStep.negativeFeedback));
+                // Display the negative feedback message
+                //  StartCoroutine(FeedbackManager.Instance.DisplayStepFeedback(currentStep.negativeFeedback));
+                FeedbackManager.Instance.ShowNegativeFeedback();
         }
     }
 }
 
-    */
+    
 }
