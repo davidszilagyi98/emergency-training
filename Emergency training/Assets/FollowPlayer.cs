@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    public GameObject Light1;
+    public GameObject Light2;
     public AudioSource help;
     public bool studentSaved;
     public bool IsAround;
@@ -53,6 +55,8 @@ public class FollowPlayer : MonoBehaviour
         {
             studentSaved = true;
             help.Stop();
+            Light1.SetActive(true);
+            Light2.SetActive(true);
         }
     }
 }

@@ -75,6 +75,7 @@ using UnityEngine;
 
 public class alarmsound : MonoBehaviour
 {
+    public GameObject Light;
     public AudioClip soundClip;
     private AudioSource audioSource;
     public GameObject particleSystemObject;
@@ -98,6 +99,7 @@ public class alarmsound : MonoBehaviour
             particleSystemObject.SetActive(true); // enable particle system
             rotationScript.enabled = true; // enable rotation script
             soundPlayed = true;
+            Light.SetActive(false);
         }
     }
 
