@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (DeadMsg == true && Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
 
         }
         if (health <= 0f)

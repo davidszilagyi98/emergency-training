@@ -4844,7 +4844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 0}
   moveSpeed: 0.5
-  deadZone: 5
+  deadZone: 0
 --- !u!1 &1652784949999524
 GameObject:
   m_ObjectHideFlags: 0
