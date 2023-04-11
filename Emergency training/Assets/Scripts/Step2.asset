@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Call Firefighters
   description: The next step would be to call the emergency. Find a phone on your
     desk in a classroom on your left and call the firefighters (112).
-  positiveFeedback: Superb, the firefighters are now on the way! The phone went out
-    of power though. Find another one in the adjacent classroom.
+  positiveFeedback: The firefighters are now on the way! This phone is out of battery.
+    Find another one next to the 2nd floor buffet.
   negativeFeedback: The emergency needs to be called to put down the fire!
   isDone: 1
