@@ -36,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        }
 
         healthText.text = "HP: " + health.ToString("F0");
 
