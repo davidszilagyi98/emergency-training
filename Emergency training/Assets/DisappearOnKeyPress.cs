@@ -81,6 +81,10 @@ using UnityEngine;
 
 public class DisappearOnKeyPress : MonoBehaviour
 {
+    public GameObject Step3;
+    public GameObject Step4;
+    public GameObject Fire1;
+
     public ParticleSystem particles; // assign the particle system in the inspector
     public ParticleSystem Fire;
     public float distanceToActivate = 2f; // the distance at which the player can activate the object
@@ -102,9 +106,13 @@ public class DisappearOnKeyPress : MonoBehaviour
             if (isDisappeared)
             {
                 Fire.Play();
+                Fire1.SetActive(true);
             }
 
             gameObject.SetActive(false); // disable the object
+
+            Step3.SetActive(false);
+            Step4.SetActive(true);
         }
     }
 

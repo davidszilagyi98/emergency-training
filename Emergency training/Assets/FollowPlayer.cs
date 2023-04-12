@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
+    //public GameObject Step2;
+    //public GameObject Step3;
+
     public GameObject Light1;
     public GameObject Light2;
     public AudioSource help;
@@ -57,6 +60,9 @@ public class FollowPlayer : MonoBehaviour
             help.Stop();
             Light1.SetActive(true);
             Light2.SetActive(true);
+
+           // Step2.SetActive(false);
+            //Step3.SetActive(true);
         }
     }
 }

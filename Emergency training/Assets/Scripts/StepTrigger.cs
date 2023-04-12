@@ -86,7 +86,7 @@ public class StepTrigger : MonoBehaviour
     Debug.Log("Feedback cleared");
 }
 */
-
+    
 
 private void Update()
 {
