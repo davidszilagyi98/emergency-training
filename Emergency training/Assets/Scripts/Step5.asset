@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c5f0afed15c4438d3c1eded929acd, type: 3}
   m_Name: Step5
   m_EditorClassIdentifier: 
-  title: Escape the building
+  title: Find the emergency exit
   description: Now that you called the firefighters, make sure to escape as fast
     as you can using the emergency exit.
-  positiveFeedback: Perfect, you are safe now.
+  positiveFeedback: Perfect, take the emergency route and escape to safety.
   negativeFeedback: You need to escape to safety as soon as possible! Follow the
     emergency route.
   isDone: 0
